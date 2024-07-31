@@ -5,6 +5,8 @@ from PIL import Image
 import io
 # AIzaSyAJQICrt6u5D48UW-a6dHFphnI5zLpVWLo
 
+API_KEY = "AIzaSyAJQICrt6u5D48UW-a6dHFphnI5zLpVWLo"
+
 def save_uploaded_file(uploaded_file):
     """Saves an uploaded file to the server."""
     try:
@@ -54,7 +56,7 @@ def extract_text_from_txt(txt_path):
 def get_assistant_response(text_content, query):
     """Sends a query to Gemini and retrieves a response using the provided text content."""
     try:
-        url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAJQICrt6u5D48UW-a6dHFphnI5zLpVWLo"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={API_KEY}"
         headers = {
             "Content-Type": "application/json"
         }
